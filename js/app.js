@@ -81,10 +81,15 @@
     const searchIcon = document.querySelector("#searchIcon");
     const searchInput = document.querySelector(".search__input");
     const searchInputInner = searchInput.children[0];
+    const content = document.querySelector(".content");
     searchIcon.onclick = function() {
         searchInput.classList.toggle("active-search");
-        if (searchInput.classList.contains("active-search")) searchInputInner.focus(); else {
+        if (searchInput.classList.contains("active-search")) {
+            searchInputInner.focus();
+            content.classList.add("padding-content");
+        } else {
             searchInputInner.blur();
+            content.classList.remove("padding-content");
             searchInputInner.value = "";
         }
     };

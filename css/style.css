@@ -289,13 +289,14 @@ h6 {
   position: fixed;
   height: 100%;
   width: 100%;
-  z-index: 18;
+  z-index: 10;
 }
 
 .search__button {
   position: absolute;
   bottom: 10px;
   right: 10px;
+  z-index: 22;
 }
 .search__button img {
   width: 38px;
@@ -303,15 +304,24 @@ h6 {
 
 .search__input {
   height: 40px;
-  width: 260px;
   margin: auto;
   position: fixed;
-  top: 5px;
+  top: 0;
   left: 50%;
   right: 50%;
   z-index: 100;
   transform: translate(-50%, -40px);
   transition: all 0.1s ease 0s;
+}
+@supports (width: clamp( 12.5rem , 5.6818181818rem  +  34.0909090909vw , 31.25rem )) {
+  .search__input {
+    width: clamp( 12.5rem , 5.6818181818rem  +  34.0909090909vw , 31.25rem );
+  }
+}
+@supports not (width: clamp( 12.5rem , 5.6818181818rem  +  34.0909090909vw , 31.25rem )) {
+  .search__input {
+    width: calc(12.5rem + 18.75 * (100vw - 20rem) / 55);
+  }
 }
 .search__input.active-search {
   transform: translate(-50%, 0px);
@@ -326,11 +336,16 @@ h6 {
   outline: none;
   padding: 0px 15px;
   border-radius: 3px;
-  background-color: white;
+  background-color: #f2f2f2;
 }
 
 .content {
   padding-top: 15px;
+  position: relative;
+  transition: all 0.2s ease 0s;
+}
+.content.padding-content {
+  padding-top: 55px;
 }
 
 .content__text {
@@ -394,8 +409,7 @@ h6 {
 .persons__list {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: minmax(200px, auto) 1fr;
-  grid-template-columns: minmax(200px, auto) 1fr;
+  grid-template-columns: 1fr;
 }
 .persons__list:not(:last-child) {
   margin-bottom: 20px;
@@ -409,6 +423,7 @@ h6 {
   -ms-flex-align: center;
   align-items: center;
   text-align: center;
+  padding: 0px 15px;
 }
 
 .persons__title {
@@ -425,12 +440,28 @@ h6 {
 }
 
 .persons__avatar img {
-  min-width: 260px;
-  max-width: 260px;
-  max-height: 260px;
-  -o-object-fit: cover;
   object-fit: cover;
   border-radius: 5px;
+}
+@supports (width: clamp( 12.5rem , 8.8636363636rem  +  18.1818181818vw , 22.5rem )) {
+  .persons__avatar img {
+    width: clamp( 12.5rem , 8.8636363636rem  +  18.1818181818vw , 22.5rem );
+  }
+}
+@supports not (width: clamp( 12.5rem , 8.8636363636rem  +  18.1818181818vw , 22.5rem )) {
+  .persons__avatar img {
+    width: calc(12.5rem + 10 * (100vw - 20rem) / 55);
+  }
+}
+@supports (height: clamp( 12.5rem , 8.8636363636rem  +  18.1818181818vw , 22.5rem )) {
+  .persons__avatar img {
+    height: clamp( 12.5rem , 8.8636363636rem  +  18.1818181818vw , 22.5rem );
+  }
+}
+@supports not (height: clamp( 12.5rem , 8.8636363636rem  +  18.1818181818vw , 22.5rem )) {
+  .persons__avatar img {
+    height: calc(12.5rem + 10 * (100vw - 20rem) / 55);
+  }
 }
 
 @media (max-width: 767px) {
