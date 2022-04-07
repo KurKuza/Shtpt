@@ -37,7 +37,4 @@
             elem.classList.remove("hide");
         }));
     };
-    window["FLS"] = true;
-    flsFunctions.isWebp();
-    flsFunctions.menuInit();
 })();
