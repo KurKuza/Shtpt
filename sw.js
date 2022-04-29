@@ -3,7 +3,9 @@ const staticCacheName = 's-app-v1'
 const assetUrls = [
 	'index.html',
 	'/js/app.js',
+	'/js/app.min.js',
 	'/css/style.css',
+	'/css/style.min.css',
 ]
 
 
