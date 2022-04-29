@@ -14,7 +14,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<meta name="theme-color" content="#ffffff" />
-	<script>
+	<script type="module">
 		// This is the "Offline copy of assets" service worker
 
 		const CACHE = "pwabuilder-offline"
@@ -34,7 +34,7 @@
 			})
 		);
 	</script>
-	<script src="./pwabuilder-sw.js"></script>
+	
 
 </head>
 
@@ -119,6 +119,26 @@
  -->
 
 	<script src="js/app.min.js?_v=20220429212241"></script>
+	<script type="module" >
+		// This is the "Offline copy of assets" service worker
+
+const CACHE = "pwabuilder-offline";
+
+importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js');
+
+self.addEventListener("message", (event) => {
+  if (event.data && event.data.type === "SKIP_WAITING") {
+    self.skipWaiting();
+  }
+});
+
+workbox.routing.registerRoute(
+  new RegExp('/*'),
+  new workbox.strategies.StaleWhileRevalidate({
+    cacheName: CACHE
+  })
+);
+	</script>
 </body>
 
 </html>
