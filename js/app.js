@@ -21,7 +21,7 @@
 				{ "firstName": "Валентина ", "middleName": "Фёдоровна", "lastName": "Войтенко", "specialization": "Физика", "photo": "" },
 				{ "firstName": "Коренской", "middleName": "Олег", "lastName": "Александрович", "specialization": "Мдк 01 03", "photo": "" },
 				{ "firstName": "Татьяна", "middleName": "Ивановна", "lastName": "", "specialization": "Около основы", "photo": "" },
-				{ "firstName": "Валентина", "middleName": "Васильевна", "lastName": "Милицкая", "specialization": "", "photo": "" },
+				{ "firstName": "Валентина", "middleName": "Васильевна", "lastName": "Милицкая", "specialization": "", "photo": "" }
 			]
 		})
 	teachers_namespaceObject.toString()
