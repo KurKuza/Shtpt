@@ -1,0 +1,22 @@
+{
+	"background_color": "#ffffff",
+	"description": "",
+	"dir": "ltr",
+	"display": "standalone",
+	"name": "Shtpt",
+	"orientation": "any",
+	"scope": "/",
+	"short_name": "Shtpt",
+	"start_url": "https://kurkuza.github.io/Shtpt/",
+	"theme_color": "#ffffff",
+	"categories": [],
+	"screenshots": [],
+	"icons": [
+		{
+			"src": "https://kurkuza.github.io/Shtpt/favicon.ico",
+			"type": "image/png",
+			"sizes": "144x144"
+		}
+	],
+	"shortcuts": []
+}
