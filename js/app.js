@@ -1,7 +1,7 @@
 (() => {
 	"use strict"
 	const teachers_namespaceObject = JSON.parse(
-		{
+		`{
 			"teachers": [
 				{ "firstName": "Алексей", "middleName": "Алексеевич", "lastName": "Березников", "specialization": "Основы финансовой грамотности, Мдк 02.02", "photo": "img/content/shul.jpg" },
 				{ "firstName": "Галина", "middleName": "Викторовна", "lastName": "Долгoдушь", "specialization": "Тех механика", "photo": "img/content/dolg.jpg" },
@@ -21,9 +21,9 @@
 				{ "firstName": "Валентина ", "middleName": "Фёдоровна", "lastName": "Войтенко", "specialization": "Физика", "photo": "" },
 				{ "firstName": "Коренской", "middleName": "Олег", "lastName": "Александрович", "specialization": "Мдк 01 03", "photo": "" },
 				{ "firstName": "Татьяна", "middleName": "Ивановна", "lastName": "", "specialization": "Около основы", "photo": "" },
-				{ "firstName": "Валентина", "middleName": "Васильевна", "lastName": "Милицкая", "specialization": "", "photo": "" }
+				{ "firstName": "Валентина", "middleName": "Васильевна", "lastName": "Милицкая", "specialization": "", "photo": "" },
 			]
-		})
+		}`)
 	teachers_namespaceObject.toString()
 	let teachersElem = document.querySelector(".teachers")
 	function t(t) {
