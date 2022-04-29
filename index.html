@@ -2,15 +2,39 @@
 <html lang="ru">
 
 <head>
-	<meta charset="UTF-8">
 	<title>Shtpt</title>
-	<link rel="manifest" href="/manifest.json">
-	<meta name="format-detection" content="telephone=no">
-	<link rel="stylesheet" href="css/style.min.css?_v=20220429212241">
-	<link rel="shortcut icon" href="favicon.ico">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="theme-color" content="#ffffff" />
+	<meta charset="UTF-8">
+	<link rel="manifest" href="/manifest.json" />
 
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20220429232721">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<meta name="theme-color" content="#ffffff" />
+	<script>
+		// This is the "Offline copy of assets" service worker
+
+		const CACHE = "pwabuilder-offline"
+
+		importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js')
+
+		self.addEventListener("message", (event) => {
+			if (event.data && event.data.type === "SKIP_WAITING") {
+				self.skipWaiting()
+			}
+		})
+
+		workbox.routing.registerRoute(
+			new RegExp('/*'),
+			new workbox.strategies.StaleWhileRevalidate({
+				cacheName: CACHE
+			})
+		);
+	</script>
+	<script src="/pwabuilder-sw.js?_v=20220429232721"></script>
 
 </head>
 
@@ -21,9 +45,7 @@
 				<div class="header__inner">
 					<div class="header__logo">
 						<a target='_blank' href="http://www.shtspt.ru/">
-							<picture>
-								<source srcset="img/shtpt_logo.webp" type="image/webp"><img src="img/shtpt_logo.png" alt="shtpt logo">
-							</picture>
+							<picture><source srcset="img/shtpt_logo.webp" type="image/webp"><img src="img/shtpt_logo.png" alt="shtpt logo"></picture>
 						</a>
 						<div class="header__vk">
 							<a target='_blank' href="https://vk.com/shtpt">
@@ -96,7 +118,7 @@
 </div>
  -->
 
-	<script src="js/app.min.js"></script>
+	<script src="js/app.min.js?_v=20220429232721"></script>
 </body>
 
 </html>
