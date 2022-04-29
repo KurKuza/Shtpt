@@ -2,18 +2,18 @@
 <html lang="ru">
 
 <head>
-	<title>@@title</title>
+	<title>Shtpt</title>
 	<meta charset="UTF-8">
-	<link rel="manifest" href="/manifest.json">
+	<link rel="manifest" href="/manifest.json" />
 
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css">
+	<link rel="stylesheet" href="css/style.min.css?_v=20220429210749">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<meta name="theme-color" content="#ffffff">
+	<meta name="theme-color" content="#ffffff" />
 	<script>
 		// This is the "Offline copy of assets" service worker
 
@@ -34,8 +34,36 @@
 			})
 		);
 	</script>
-	<script src="/pwabuilder-sw.js"></script>
+	<script src="/pwabuilder-sw.js?_v=20220429210749"></script>
 
+</head>
+
+<!-- // ------ ------------------------>
+
+<head>
+	<meta charset="utf-8" />
+	<title>PWA Starter</title>
+
+	<base href="/" />
+
+	<!-- This meta viewport ensures the webpage's dimensions change according to the device it's on. This is called Responsive Web Design.-->
+	<meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+	<meta name="description" content="This is a PWA Starter app" />
+
+
+	<!-- These meta tags are Apple-specific, and set the web application to run in full-screen mode with a black status bar. Learn more at https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html-->
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-title" content="PWA Starter" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+	<!-- Imports an icon to represent the document. -->
+	<link rel="icon" href="/assets/icons/icon_24.png" type="image/x-icon" />
+
+	<!-- Imports the manifest to represent the web application. A web app must have a manifest to be a PWA. -->
+
+	<script type="module" src="https://unpkg.com/@fluentui/web-components?_v=20220429210749" crossorigin="anonymous"></script>
+
+	<script type="module" src="/src/app-index.ts?_v=20220429210749"></script>
 </head>
 
 <body>
@@ -118,7 +146,7 @@
 </div>
  -->
 
-	<script src="js/app.min.js?_v=20220429180902"></script>
+	<script src="js/app.min.js?_v=20220429210749"></script>
 </body>
 
 </html>

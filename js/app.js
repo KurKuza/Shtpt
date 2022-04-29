@@ -5,7 +5,6 @@
     let teachersElem = document.querySelector(".teachers");
     function t(t) {
         for (let s = 0; s < t.length; s++) {
-            console.log(0 == !t[s].photo);
             let i = `\n\t\t\t<div class="persons__list">\n\t\t\t<div class="persons__avatar">\n\t\t\t${t[s].photo ? `<img src="${t[s].photo}" alt="teacher shtpt">` : ""}\n\t\t\t</div>\n\t\t\t<div class="persons__body">\n\t\t\t\t<h3 class="persons__title">\n\t\t\t\t\t${t[s].firstName} ${t[s].middleName} ${t[s].lastName}\n\t\t\t\t</h3>\n\t\t\t\t${t[s].specialization ? `<div class="persons__text">${t[s].specialization}</div>` : ""}\n\t\t\t</div >\n\t\t</div >\n\t\t`;
             teachersElem.innerHTML += i;
         }
