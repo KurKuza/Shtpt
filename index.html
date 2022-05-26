@@ -94,16 +94,6 @@
 	</div>
 </div>
  -->
-	<script>
-		window.addEventListener("load", (async () => {
-			if ("serviceWorker" in navigator) try {
-				const reg = await navigator.serviceWorker.register("/Shtpt/sw.js")
-				console.log("Service worker register success", reg)
-			} catch (err) {
-				console.log("Service worker register fail", err)
-			}
-		}));
-	</script>
 	<script src="js/app.js"></script>
 </body>
 
