@@ -1,14 +1,15 @@
+window.addEventListener("load", (async () => {
+	if ("serviceWorker" in navigator) try {
+			const reg = await navigator.serviceWorker.register("../sw.js");
+			console.log("Service worker register success", reg);
+	} catch (e) {
+			console.log("Service worker register fail");
+	}
+}));
+
 (() => {
     "use strict";
     const teachers_namespaceObject = JSON.parse('{"teachers":[{"firstName":"Алексей","middleName":"Алексеевич","lastName":"Березников","specialization":"Основы финансовой грамотности, Мдк 02.02","photo":"img/content/shul.jpg"},{"firstName":"Галина","middleName":"Викторовна","lastName":"Долгoдушь","specialization":"Тех механика","photo":"img/content/dolg.jpg"},{"firstName":"Виталий","middleName":"Викторович","lastName":"Братчин","specialization":"Электро техника","photo":"img/content/vitali.jpg"},{"firstName":"Оксана","middleName":"Николаевна ","lastName":"Субботина","specialization":"Заместитель директора по учебной-вопитательной работе","photo":"img/content/EnXTmxugJA4.jpg"},{"firstName":"Александр","middleName":"Александрович","lastName":"Жданов","specialization":"отдел молодежной политики","photo":"img/content/zd.jpg"},{"firstName":"Елена","middleName":"Юрьевна","lastName":"Чечёткина","specialization":"Философия","photo":""},{"firstName":"Валентина","middleName":"Ивановна","lastName":"Мещерикова","specialization":"Зам директор","photo":"img/content/vmsch.jpg"},{"firstName":"Наталья","middleName":"Николаевна","lastName":"Якимова","specialization":"Зам директор по производственной практики","photo":"img/content/nya.jpg"},{"firstName":"Геннадий ","middleName":"","lastName":"Петрович","specialization":"Физра","photo":"img/content/gp.jpg"},{"firstName":"Алексей ","middleName":"","lastName":"Пыханов","specialization":"Физра","photo":"img/content/Ap.jpg"},{"firstName":"Яна","middleName":"Юрьевна","lastName":"Вишневская","specialization":"Директор","photo":"img/content/dir.jpg"},{"firstName":"Наталья ","middleName":"Михайловна","lastName":"","specialization":"","photo":"img/content/nm.jpg"},{"firstName":"Ольга","middleName":"Александрова","lastName":"","specialization":"","photo":""},{"firstName":"Светлана","middleName":"Викторовна","lastName":"","specialization":"В бухгалтерии","photo":""},{"firstName":"Владимир","middleName":"Иванович","lastName":"Войтенко","specialization":"Физра","photo":""},{"firstName":"Валентина ","middleName":"Фёдоровна","lastName":"Войтенко","specialization":"Физика","photo":""},{"firstName":"Коренской","middleName":"Олег","lastName":"Александрович","specialization":"Мдк 01 03","photo":""},{"firstName":"Татьяна","middleName":"Ивановна","lastName":"","specialization":"Около основы","photo":""},{"firstName":"Валентина","middleName":"Васильевна","lastName":"Милицкая","specialization":"","photo":""}]}');
-    window.addEventListener("load", (async () => {
-        if ("serviceWorker" in navigator) try {
-            const reg = await navigator.serviceWorker.register("../sw.js");
-            console.log("Service worker register success", reg);
-        } catch (e) {
-            console.log("Service worker register fail");
-        }
-    }));
     teachers_namespaceObject.toString();
     let teachersElem = document.querySelector(".teachers");
     function t(t) {
