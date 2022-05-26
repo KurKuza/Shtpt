@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Shtpt</title>
-	<link rel="manifest" href="/Shtpt/manifest.json" />
+	<link rel="manifest" href="/../manifest.json" />
 	<meta name="format-detection" content="telephone=no">
 	<link rel="stylesheet" href="css/style.min.css?_v=20220429232721">
 	<link rel="shortcut icon" href="favicon.ico">
@@ -99,8 +99,8 @@
 			if ("serviceWorker" in navigator) try {
 				const reg = await navigator.serviceWorker.register("/sw.js")
 				console.log("Service worker register success", reg)
-			} catch (e) {
-				console.log("Service worker register fail")
+			} catch (err) {
+				console.log("Service worker register fail", err)
 			}
 		}));
 	</script>
