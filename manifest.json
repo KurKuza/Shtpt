@@ -1,15 +1,49 @@
 {
-	"background_color": "#ffffff",
+	"name": "Shtpt",
 	"description": "",
 	"dir": "ltr",
 	"display": "standalone",
-	"name": "Shtpt",
 	"orientation": "portrait",
 	"scope": ".",
 	"short_name": "Shtpt",
 	"start_url": "/?utm_source=homescreen",
 	"theme_color": "#ffffff",
+	"background_color": "#ffffff",
 	"categories": [],
+	"shortcuts": [
+		{
+			"name": "Start Live Session",
+			"short_name": "Start Live",
+			"description": "Jump direction into starting or joining a live session",
+			"url": "/?startLive",
+			"icons": [
+				{
+					"src": "https://pwabuilder.com/assets/icons/icon_192.png",
+					"sizes": "192x192"
+				}
+			]
+		}
+	],
+	"screenshots": [
+		{
+			"src": "https://www.pwabuilder.com/assets/screenshots/screen1.png",
+			"sizes": "2880x1800",
+			"type": "image/png",
+			"description": "PWABuilder Home Screen"
+		},
+		{
+			"src": "https://www.pwabuilder.com/assets/screenshots/screen2.png",
+			"sizes": "2880/1800",
+			"type": "image/png",
+			"description": "PWABuilder Report Card"
+		},
+		{
+			"src": "https://www.pwabuilder.com/assets/screenshots/screen3.png",
+			"sizes": "2880x1800",
+			"type": "image/png",
+			"description": "Manifest information on the Report Card"
+		}
+	],
 	"icons": [
 		{
 			"src": "android/android-launchericon-512-512.png",
