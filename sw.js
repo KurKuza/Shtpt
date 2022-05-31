@@ -7,11 +7,11 @@ function hndlEventInstall(evt) {
      */
     async function cacheStaticFiles() {
         const files = [
-            './',
-            './css/style.css',
-            './css/style.min.css',
-						'./js/app.js',
-            './index.html'
+            '/Shtpt/',
+            '/Shtpt/css/style.css',
+            '/Shtpt/css/style.min.css',
+						'/Shtpt/js/app.js',
+            '/Shtpt/index.html'
         ];
         const cacheStat = await caches.open(CACHE_STATIC);
         await Promise.all(
