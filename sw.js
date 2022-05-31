@@ -8,7 +8,6 @@ function hndlEventInstall(evt) {
     async function cacheStaticFiles() {
         const files = [
             '/Shtpt/',
-            '/Shtpt/css/style.css',
             '/Shtpt/css/style.min.css',
 						'/Shtpt/js/app.js',
             '/Shtpt/index.html'
