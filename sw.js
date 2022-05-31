@@ -1,30 +1,54 @@
-const staticCacheName = 's-app-v1'
+'use strict'
+const CACHE_STATIC = 'static-cache-v2'
 
-const assetUrls = [
-	'index.html',
-	'/js/app.js',
-	'/css/style.css',
-	'/css/style.min.css',
-]
+function hndlEventInstall(evt) {
+	/**
+	 * @returns {Promise<void>}
+	 */
+	async function cacheStaticFiles() {
+		const files = [
+			'/Shtpt/',
+			'/Shtpt/css/style.min.css',
+			'/Shtpt/js/app.js',
+			'/Shtpt/index.html'
+		]
+		const cacheStat = await caches.open(CACHE_STATIC)
+		await Promise.all(
+			files.map(function (url) {
+				return cacheStat.add(url).catch(function (reason) {
+					// console.log(`'${url}' failed: ${String(reason)}`);
+				})
+			})
+		)
+	}
 
-
-self.addEventListener('install', async event => {
-	const cache = await caches.open(staticCacheName)
-	await cache.addAll(assetUrls)
-})
-
-self.addEventListener('activate', (event) => {
-	console.log('[SW]: activate')
-})
-
-self.addEventListener('fetch', event => {
-	console.log('Fetch', event.request.url)
-
-	event.respondWith(cacheFirst(event.request))
-})
-
-
-async function cacheFirst(request) {
-	const cached = await caches.match(request)
-	return cached ?? await fetch(request)
+	//  wait until all static files will be cached
+	evt.waitUntil(cacheStaticFiles())
 }
+
+function hndlEventActivete(evt) {
+	const cacheNames = await caches.keys()
+	await Promise.all(
+		cacheNames.filter(name => name !== CACHE_STATIC).map(name => caches.delete(name))
+	)
+}
+
+function hndlEventFetch(evt) {
+	async function getFromCache() {
+		const cache = await self.caches.open(CACHE_STATIC)
+		const cachedResponse = await cache.match(evt.request)
+		if (cachedResponse) {
+			return cachedResponse
+		}
+		// wait until resource will be fetched from server and stored in cache
+		const resp = await fetch(evt.request)
+		await cache.put(evt.request, resp.clone())
+		return resp
+	}
+
+	evt.respondWith(getFromCache())
+}
+
+self.addEventListener('install', hndlEventInstall)
+self.addEventListener('activate', hndlEventActivete)
+self.addEventListener('fetch', hndlEventFetch)
